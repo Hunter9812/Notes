@@ -4,8 +4,6 @@
 
 ## [官网](https://www.python.org/downloads/)
 
-安装python环境你也可以用conda
-
 ## [conda](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)
 
 **注意**：conda本身是一个通用的包管理系统（*general-purpose package management system*），只是可以很好的管理python的package
@@ -199,13 +197,13 @@ conda update conda·
     + Ctrl+Shift+P 或者 View > Command Palette，打开命令面板
       输入`Python: Select Interpreter`
 
-# Jupyter notebook
+## Jupyter notebook
 
 Jupyter Notebook 是一个开源的交互式笔记本工具，它允许用户创建和共享文档，其中包含实时的代码、可视化效果、数学方程和解释性文本。它最初是作为 IPython Notebook 而知名的，后来演变成支持多种编程语言的工具（例如 `julia`）。
 
 推荐在vscode里安装[插件](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)使用jupyter notebook，比在启动网页简单方便（idea或者说pycharm也是支持.ipynb文件的）
 
-## 安装
+### 安装
 
 + 如果是conda安装的python，首先base环境需要安装jupyter包
 
@@ -229,7 +227,7 @@ Jupyter Notebook 是一个开源的交互式笔记本工具，它允许用户创
 
     这样，在 Jupyter Notebook 中就可以看到一个新的内核选项，名称为 "Python (pytorch)"，它将使用 "pytorch" 环境中的 Python 解释器来执行代码。
 
-## 原生快捷键
+### 原生快捷键
 
 notebook 有很多快捷键，可以通过菜单中的 `Help->Keyboard Shortcuts` 查看，也可以直接用快捷键 `Ctrl+Shift+P` 查看。下面简单介绍一些快捷键：
 
@@ -350,7 +348,7 @@ total = ['item_one', 'item_two', 'item_three',
 
 python中数字有四种类型：整数、布尔型、浮点数和复数。
 
-> [type()](https://www.runoob.com/python/python-func-type.html)函数如果你只有第一个参数则返回对象的类型，三个参数返回新的类型对象。 
+> [type()](https://www.runoob.com/python/python-func-type.html)函数如果你只有第一个参数则返回对象的类型，三个参数返回新的类型对象。
 
 - **int** (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。
 
@@ -397,7 +395,7 @@ python中数字有四种类型：整数、布尔型、浮点数和复数。
   '这是一个段落，\n可以由多行组成'
   ```
 
-  
+
 
 - 转义符 \。
 
@@ -483,7 +481,7 @@ python中数字有四种类型：整数、布尔型、浮点数和复数。
     2
     ```
 
-    
+
 
 ## 空行
 
@@ -515,11 +513,11 @@ Python 可以在同一行中使用多条语句，语句之间使用分号 ; 分�
 如下实例：
 
 ```python
-if expression : 
+if expression :
    suite
-elif expression : 
-   suite 
-else : 
+elif expression :
+   suite
+else :
    suite
 ```
 
@@ -547,9 +545,9 @@ else :
       ```
 
       这句代码执行时，外侧的双引号为定界符，里面的那个单引号为标点符号。
-      
+
       输出：
-      
+
       ```
       Hello'World!
       ```
@@ -559,9 +557,9 @@ else :
       ```
 
       这句代码执行时，外侧的单引号为定界符，里面的那个双引号为标点符号。
-      
+
       输出：
-      
+
       ```
       Hello"World!
       ```
@@ -573,10 +571,10 @@ else :
     ```python
     >>> help(print)
     Help on built-in function print in module builtins:
-    
+
     print(...)
         print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
-        
+
         Prints the values to a stream, or to sys.stdout by default.
         Optional keyword arguments:
         file:  a file-like object (stream); defaults to the current sys.stdout.
@@ -591,33 +589,33 @@ else :
     >>> def getPairs(dict):
             for k,v in dict.items() :
                     print(k,v,sep=':')
-    
+
     >>> getPairs({ x : x ** 3 for x in (1,2,3,4)})
     1:1
     2:8
     3:27
     4:64
-    >>> 
+    >>>
     ```
-    
+
   - 类似于 C/C++ 的 **printf**，Python 的 **print** 也能实现格式化输出，方法是使用 % 操作符，它会将左边的字符串当做格式字符串，将右边的参数代入格式字符串：
-  
+
     ```python
     >>> print("100 + 200 = %d" % 300) #左边的%d被替换成右边的300
     100 + 200 = 300
     >>> print("A的小写是%s" % "a") #左边的%s被替换成右边的a
     A的小写是a
     ```
-  
+
     如果要带入多个参数，则需要用 () 包裹代入的多个参数，参数与参数之间用逗号隔开，参数的顺序应该对应格式字符串中的顺序：
-  
+
     ```python
     >>> print("我是%s,你是%s" % ("nb","sb"))
     我是nb,你是sb
     ```
-  
+
     **格式字符串**中，不同占位符的含义：
-  
+
     - **%s**： 作为字符串
     - **%d**： 作为有符号十进制整数
     - **%u**： 作为无符号十进制整数
@@ -868,7 +866,7 @@ Python3 支持 **int、float、bool、complex（复数）**。
 - > **注意：**Python3 中，bool 是 int 的子类，True 和 False 可以和数字相加， `True==1、False==0` 会返回 **True**，但可以通过 `is` 来判断类型。
   >
   > ```
-  > >>> issubclass(bool, int) 
+  > >>> issubclass(bool, int)
   > True
   > >>> True==1
   > True
@@ -906,7 +904,7 @@ Python3 支持 **int、float、bool、complex（复数）**。
 
   ```python
   >>> del var1, var2
-  >>> print(var1, var2)                         
+  >>> print(var1, var2)
   NameError: name 'var1' is not defined
   ```
 
@@ -985,7 +983,7 @@ Python中的字符串用单引号 ' 或双引号 " 括起来，同时使用反�
   'The qu'
   >>> s[:-6]
   'The quick brown fox jumps over a la'
-  
+
   >>> 'wolf' + s
   'wolfThe quick brown fox jumps over a lazy dog'
   >>> s*4
@@ -1001,7 +999,7 @@ Python中的字符串用单引号 ' 或双引号 " 括起来，同时使用反�
 + 与 C 字符串不同的是，Python 字符串不能被改变。向一个索引位置赋值，比如 word[0] = 'm' 会导致错误。
 
   ```python
-  >>> s[0] = 'm' 
+  >>> s[0] = 'm'
   TypeError: 'str' object does not support item assignment
   # TypeError：“str”对象不支持项赋值
   # s[1] = 'm'也会出错
@@ -1046,7 +1044,7 @@ List（列表） 是 Python 中使用最频繁的数据类型。
   >>> list + tinylist
   ['fyj', 24, 3.14, 'cmd', 'ipconfig']
   ```
-  
+
 - 与Python字符串不一样的是，列表中的元素是可以改变的：
 
   ```python
@@ -1060,7 +1058,7 @@ List（列表） 是 Python 中使用最频繁的数据类型。
   >>> l[3:6] = []
   >>> l
   [9, 2, 12, 6]
-  >>> l[2:] = [1,2,3,4,5,6,7] 
+  >>> l[2:] = [1,2,3,4,5,6,7]
   >>> l
   [9, 2, 1, 2, 3, 4, 5, 6, 7]
   ```
@@ -1084,8 +1082,8 @@ List（列表） 是 Python 中使用最频繁的数据类型。
       inputWords = inputWords[-1::-1]
       output = ' '.join(inputWords)
       return output
-  
-  if __name__ == "__main__": 
+
+  if __name__ == "__main__":
       input = input("请输入您要反转的句子：\n")
       rw = reverseWords(input)
       print(rw)
@@ -1100,7 +1098,7 @@ List（列表） 是 Python 中使用最频繁的数据类型。
 
   ```python
   >>> tuple = ('abcd', 786, 2.23, 'filter', 70.2)
-  >>> tinytuple = (123, 'filter')    
+  >>> tinytuple = (123, 'filter')
   >>> tuple
   ('abcd', 786, 2.23, 'filter', 70.2)
   >>> tuple[0]
@@ -1120,7 +1118,7 @@ List（列表） 是 Python 中使用最频繁的数据类型。
   其实，可以把字符串看作一种特殊的元组。
 
   ```python
-  >>> tup = (1,2,3,4,5,6) 
+  >>> tup = (1,2,3,4,5,6)
   >>> tup
   (1, 2, 3, 4, 5, 6)
   >>> tup[1:6]
@@ -1137,15 +1135,15 @@ List（列表） 是 Python 中使用最频繁的数据类型。
   ```python
   tup1 = ()    # 空元组
   tup2 = (20,) # 一个元素，需要在元素后添加逗号
-  
+
   >>> tup1 = ()
-  >>> type(tup1) 
+  >>> type(tup1)
   <class 'tuple'>
-  >>> tup2 = (2) 
-  >>> type(tup2) 
+  >>> tup2 = (2)
+  >>> type(tup2)
   <class 'int'>
   >>> tup3 = (2,)
-  >>> type(tup3) 
+  >>> type(tup3)
   <class 'tuple'>
   ```
 
@@ -1171,7 +1169,7 @@ List（列表） 是 Python 中使用最频繁的数据类型。
   ```python
   >>> type({})
   <class 'dict'>
-  >>> type(set()) 
+  >>> type(set())
   <class 'set'>
   ```
 
@@ -1185,25 +1183,25 @@ List（列表） 是 Python 中使用最频繁的数据类型。
 
   ```python
   sites = {'Google', 'Taobao', 'Taobao', 'Facebook', 'Zhihu', 'Baidu'}
-  
+
   print(sites)   # 输出集合，重复的元素被自动去掉
-  
+
   # 成员测试
   if 'Baidu' in sites :
       print('Baidu 在集合中')
   else :
       print('Baidu 不在集合中')
-  
+
   # set可以进行集合运算
   a = set('abracadabra')
   b = set('alacazam')
-  
+
   print(a)
   print(a - b)     # a 和 b 的差集
   print(a | b)     # a 和 b 的并集
   print(a & b)     # a 和 b 的交集
   print(a ^ b)     # a 和 b 中不同时存在的元素
-  
+
   ###### 结果
   {'Baidu', 'Zhihu', 'Google', 'Taobao', 'Facebook'}
   Baidu 在集合中
@@ -1293,7 +1291,7 @@ s.add( x )
   >
   >   字典 values() 方法返回一个视图对象。
   >
-  > 
+  >
 
   **注意：**
 
@@ -1413,10 +1411,10 @@ Python 支持各种数据结构的推导式：
 列表推导式格式为：
 
 ```python
-[表达式 for 变量 in 列表] 
+[表达式 for 变量 in 列表]
 [out_exp_res for out_exp in input_list]
 
-或者 
+或者
 
 [表达式 for 变量 in 列表 if 条件]
 [out_exp_res for out_exp in input_list if condition]
@@ -1538,8 +1536,8 @@ setn
 
 ```python
 list1 = ['python', 'test1', 'test2']
-# title()：首字母大写 
-# upper()：改为大写 
+# title()：首字母大写
+# upper()：改为大写
 # startswith()：用于检索字符串是否以指定字符串开头，如果是返回 True；反之返回 False。
 list2 = [word.title() if word.startswith('p') else word.upper() for word in list1]
 print(list2)
@@ -1583,7 +1581,7 @@ b=m
 i 的值为： 65536
 
 >>> i = 123123
->>> print('12312',i) 
+>>> print('12312',i)
 12312 123123
 ```
 
@@ -1680,13 +1678,13 @@ while 判断条件(condition)：
 
 ```python
 n = 100
- 
+
 sum = 0
 counter = 1
 while counter <= n:
     sum = sum + counter
     counter += 1
- 
+
 print("1 到 %d 之和为: %d" % (n,sum))
 ```
 
@@ -1699,7 +1697,7 @@ var = 1
 while var == 1 :  # 表达式永远为 true
    num = int(input("输入一个数字  :"))
    print ("你输入的数字是: ", num)
- 
+
 print ("Good bye!")
 ```
 
@@ -1793,7 +1791,7 @@ The qui
 >>>a = ['Google', 'Baidu', 'Runoob', 'Taobao', 'QQ']
 >>> for i in range(len(a)):
 ...     print(i, a[i])
-... 
+...
 0 Google
 1 Baidu
 2 Runoob
@@ -1824,7 +1822,7 @@ Python pass是空语句，是为了保持程序结构的完整性。
 pass 不做任何事情，一般用做占位语句
 
 ```python
-if __name__ == "__main__": 
+if __name__ == "__main__":
     pass
 ```
 
@@ -1843,7 +1841,7 @@ if __name__ == "__main__":
   >>> sequence = [12, 34, 34, 23, 45, 76, 89]
   >>> for i, j in enumerate(sequence):
   ...     print(i, j)
-  ... 
+  ...
   0 12
   1 34
   2 34
@@ -1884,7 +1882,7 @@ if __name__ == "__main__":
 >>> for x in it:
 ...     print (x, end=" ")
 ...
-1 2 3 4 
+1 2 3 4
 ```
 
 也可以使用 next() 函数：
@@ -1941,7 +1939,7 @@ lambda [arg1 [,arg2,.....argn]]:expression
 
 1. print
 
-   
+
 
 2. input
 
@@ -1993,7 +1991,7 @@ Python 中的 with 语句用于异常处理，封装了 try…except…finally �
 
 **with** 语句使代码更清晰、更具可读性， 它简化了文件流等公共资源的管理。
 
-在处理文件对象时使用 with 关键字是一种很好的做法。 
+在处理文件对象时使用 with 关键字是一种很好的做法。
 
 with的语法
 
